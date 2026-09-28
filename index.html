@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💀CyberPulse</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+
+<body>
+    <div class="auth-container">
+        <div class="flip-card" id="flipCard">
+
+            <!-- ================= LOGIN CARD (FRONT) ================= -->
+            <div class="card-face card-front">
+                <div class="icon-circle">
+                    <i class="fa-solid fa-lock" style="color: #d4af37;">✨</i>
+                </div>
+                <h2>Welcome</h2>
+                <p class="subtitle">Login to continue your journey</p>
+
+                <form id="loginForm" autocomplete="on" novalidate>
+                    <div class="input-group">
+                        <i class="fa-regular fa-envelope input-icon"></i>
+                        <input type="email" id="loginEmail" placeholder="Username" required autocomplete="email">
+                        <span class="error-text">Please enter a valid email address</span>
+                    </div>
+                    <div class="input-group">
+                        <i class="fa-solid fa-key input-icon"></i>
+                        <input type="password" id="loginPassword" placeholder="Password" required
+                            autocomplete="current-password">
+                        <i class="fa-regular fa-eye eye-icon toggle-password"></i>
+                        <span class="error-text">Password must be at least 6 characters</span>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="rememberMe">
+                            <span class="checkmark"></span>
+                            Remember me
+                        </label>
+                        <a href="#" class="forgot-pass">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn" id="loginBtn">
+                        <span class="btn-text">LOGIN</span>
+                        <div class="spinner hidden"></div>
+                    </button>
+                </form>
+
+                <div class="switch-section">
+                    <p>Don't have an account?</p>
+                    <button class="switch-btn" id="btnToSignup" title="Create Account">
+                        <i class="fa-solid fa-plus">☆</i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- =================(Your main content that will be visible after logging in.)================= -->
+    <div id="mainContent" style="display: none;">
+        <div class="scanlines"></div>
+        <canvas id="matrixCanvas"></canvas>
+
+        <div class="sys-info">
+            <div class="glow-text">SYS_STATUS: <span id="sys-status">STANDBY</span></div>
+            <div class="glow-text">CORE_LOAD: <span id="cpu-load">0%</span></div>
+            <button id="audio-btn" onclick="enableAudio()">AUDIO: OFF</button>
+        </div>
+
+        <div id="setup-box">
+            <h3 class="glow-text">[ DEPLOY EXPLOIT CORE ]</h3>
+            <p style="font-size:0.75rem; color:#fa0303; margin-bottom:15px;">TARGET VECTOR REGISTRATION REQUIRED</p>
+            <input type="text" id="target-input" placeholder="ENTER CODENAME OR DOMAIN..." autocomplete="off">
+            <button onclick="startInfiltration()">EXECUTE ATTACK METHOD</button>
+        </div>
+
+        <div id="dashboard">
+            <div id="terminal-pane">
+                <div id="terminal"></div>
+            </div>
+            <div id="side-pane">
+                <div class="panel-box">
+                    <h4 class="glow-text">[ ACTIVE RECON REGIONS ]</h4>
+                    <div id="node-list">INITIALIZING RADAR GRID...</div>
+                </div>
+                <div class="panel-box">
+                    <h4 class="glow-text">[ DATA PACKET INTERCEPT ]</h4>
+                    <div id="live-data-stream">AWAITING HANDSHAKE...</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="access-screen">
+            <h1 class="success">ACCESS GRANTED</h1>
+            <div style="width:100%; height:2px; background:#00FFFF; margin: 15px 0; box-shadow: 0 0 10px #00FFFF;">
+            </div>
+            <p style="color: #ff00aa; font-size: 0.9rem; letter-spacing: 2px;">
+                SYSTEM BREACH: <span id="final-target" style="color: #00FF00; text-shadow: 0 0 5px #00FF00;"></span>
+                OVERRIDDEN
+            </p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
